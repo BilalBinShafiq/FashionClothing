@@ -1,0 +1,31 @@
+{
+  "name": "self-learning-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Bilal-Bin-Shafiq",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "connect-mongodb-session": "^3.1.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.4.7",
+    "nodemon": "^2.0.19"
+  }
+}

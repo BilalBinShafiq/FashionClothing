@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <!-- Head Section  -->
+  <%- include('includes/head') %>
+  <body>
+    <!-- Page Preloader Section  -->
+    <%- include('includes/page-preloader') %>
+    <!-- Navigation Section  -->
+    <%- include('includes/navigation-menu') %>
+    <!-- Selected Page Section  -->
+    <%- include(`pages/${pageName}`) %>
+    <!-- Latest Blog Section End -->
+    <%- include('includes/footer') %> <%- include('includes/end-scripts') %>
+  </body>
+</html>
