@@ -6,6 +6,10 @@ const morgan = require('morgan');
 
 const bodyParser = require('body-parser');
 // const path = require('path');
+
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
+
 const mainRoutes = require('./routes/main-routes');
 // const shopRoutes = require('./routes/shop-routes');
 // const addProductRoutes = require('./routes/add-product-routes');
@@ -55,11 +59,26 @@ app.use('/api/v1/products', productRouter);
 app.use('/api/v1/users', userRouter);
 
 // Set 404 View here
-app.use((request, response) => {
-  response.render('index', {
-    pageTitle: '404',
-    pageName: '404',
-  });
+// app.use((request, response) => {
+//   response.render('index', {
+//     pageTitle: '404',
+//     pageName: '404',
+//   });
+// });
+
+app.all('*', (request, response, next) => {
+  // response.status(404).json({
+  //   status: 'fail',
+  //   messsage: `Can't find ${request.originalUrl} on this server`,
+  // });
+
+  // const err = new err(`Can't find ${request.originalUrl} on this server`);
+  // err.status = 'fail';
+  // err.statusCode = 404;
+  // next(err);
+
+  next(new AppError(`Can't find ${request.originalUrl} on this server`, 404));
 });
+app.use(globalErrorHandler);
 
 module.exports = app;
