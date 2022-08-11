@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
-module.exports = (error, request, response) => {
+// eslint-disable-next-line no-unused-vars
+module.exports = (error, request, response, next) => {
   error.statusCode = error.statusCode || 500;
   error.status = error.status || error;
 
