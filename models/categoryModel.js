@@ -10,8 +10,8 @@ const categorySchema = new Schema({
     require: [true, 'A category must have a name!'],
     trim: true,
     minlength: [
-      5,
-      'The minimum length of a name must be at least 5 characters.',
+      3,
+      'The minimum length of a name must be at least 3 characters.',
     ],
     maxLength: [
       50,

@@ -1,11 +1,12 @@
 const express = require('express');
 const categoryController = require('../controllers/categoryController');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
 router
   .route('/')
-  .get(categoryController.getAllCategories)
+  .get(authController.protect, categoryController.getAllCategories)
   .post(categoryController.createCategory);
 
 router
